@@ -59,6 +59,21 @@ systemctl is-enabled Eazy #To check if Eazy service is enabled on boot
 ```
 ***
 
+## Masternode update:
+In order to update your Eazy Masternode to version 1.1.3, please run the following commands:
+```
+cd /tmp
+wget -N https://github.com/zoldur/Eazy/releases/download/v1.1.3/eazy.tar.gz
+tar xvzf eazy.tar.gz
+systemctl stop Eazy.service
+mv eazyd eazy-cli  /usr/local/bin
+systemctl start Eazy.service
+rm eazy.tar.gz
+eazy-cli getinfo
+```
+Open your desktop wallet and start the node from there.
+***
+
 ## Donations
 Any donation is highly appreciated
 
